@@ -751,6 +751,30 @@
 
 
     <!-- JAVASCRIPT -->
+    <script>
+function comprobarClave() {
+
+    const clave = document.getElementById("password").value;
+    const error = document.getElementById("error");
+    const login = document.getElementById("login");
+
+    if (clave === "23082025") {
+
+        error.textContent = "Sabía que eras tú. ♡";
+        error.style.color = "#d96f92";
+
+        setTimeout(function() {
+            login.style.display = "none";
+        }, 1000);
+
+    } else {
+
+        error.textContent = "Mmm... esa no es, Mochi 😭❤️";
+        error.style.color = "#d96f92";
+
+    }
+}
+</script>
 
     <script src="script.js"></script>
 
