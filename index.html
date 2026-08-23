@@ -2,6 +2,7 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -14,77 +15,54 @@
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet"
     >
+
 </head>
 
 
 <body>
 
     <!-- =====================================
+         ELEMENTOS OCULTOS PARA EL SCRIPT
+    ====================================== -->
+
+    <div
+        id="login"
+        style="display: none;"
+    >
+
+        <input
+            type="password"
+            id="password"
+        >
+
+        <button
+            id="entrarBtn"
+            type="button"
+        >
+            Entrar
+        </button>
+
+        <p id="error"></p>
+
+    </div>
+
+
+    <!-- =====================================
          CORAZONES DE FONDO
     ====================================== -->
 
     <div class="hearts"></div>
-
-
-    <!-- =====================================
-         PANTALLA DE CONTRASEÑA
-    ====================================== -->
-
-    <div id="login">
-
-        <div class="login-card">
-
-            <div class="login-heart">
-                ♡
-            </div>
-
-            <p class="login-small">
-                ESTA PÁGINA ES SOLAMENTE PARA TI
-            </p>
-
-            <h1>
-                Mochi
-            </h1>
-
-            <p class="login-text">
-                Hay algo que preparé para ti.
-            </p>
-
-
-            <div class="password-box">
-
-                <input
-                    type="password"
-                    id="password"
-                    placeholder="Escribe la clave..."
-                    autocomplete="off"
-                >
-
-                <button
-                    id="entrarBtn"
-                    type="button"
-                >
-                    Entrar ♡
-                </button>
-
-            </div>
-
-
-            <p id="error"></p>
-
-            <p class="pista">
-                Pista: es algo que solo nosotros sabemos 💗
-            </p>
-
-        </div>
-
-    </div>
 
 
 
@@ -138,9 +116,7 @@
     >
 
 
-        <!-- =================================
-             HERO
-        ================================== -->
+        <!-- HERO -->
 
         <section class="hero">
 
@@ -255,7 +231,7 @@
 
 
         <!-- =================================
-             NUESTRA HISTORIA
+             HISTORIA
         ================================== -->
 
         <section class="seccion historia">
@@ -702,10 +678,12 @@
         id="musica"
         loop
     >
+
         <source
             src="musica.mp3"
             type="audio/mpeg"
         >
+
     </audio>
 
 
