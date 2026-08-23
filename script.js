@@ -195,3 +195,57 @@ elementos.forEach((elemento) => {
     observer.observe(elemento);
 
 });
+/* =========================
+   CONTRASEÑA PARA MOCHI
+========================= */
+
+const passwordCorrecta = "23082025";
+
+const login = document.getElementById("login");
+const passwordInput = document.getElementById("password");
+const entrarBtn = document.getElementById("entrarBtn");
+const error = document.getElementById("error");
+
+function entrar() {
+
+    const password =
+        passwordInput.value.trim().toUpperCase();
+
+    if (password === passwordCorrecta) {
+
+        error.textContent = "Sabía que eras tú. ♡";
+
+        setTimeout(() => {
+
+            login.classList.add("saliendo");
+
+            setTimeout(() => {
+
+                login.style.display = "none";
+
+            }, 800);
+
+        }, 700);
+
+    } else {
+
+        error.textContent =
+            "Mmm... esa no es, Mochi 😭❤️";
+
+        passwordInput.value = "";
+
+        passwordInput.focus();
+    }
+}
+
+entrarBtn.addEventListener("click", entrar);
+
+passwordInput.addEventListener("keydown", (event) => {
+
+    if (event.key === "Enter") {
+
+        entrar();
+
+    }
+
+});
