@@ -36,32 +36,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================
-       BOTÓN ABRIR
-    ========================= */
+   BOTÓN ABRIR
+========================= */
 
-    const abrirBtn = document.getElementById("abrirBtn");
+function abrirPagina() {
+
     const inicio = document.getElementById("inicio");
     const contenido = document.getElementById("contenido");
 
-    if (abrirBtn) {
+    console.log("ABRIR FUNCIONANDO");
 
-        abrirBtn.addEventListener("click", function () {
+    inicio.style.display = "none";
 
-            inicio.classList.add("ocultando");
+    contenido.style.display = "block";
 
-            setTimeout(function () {
+    contenido.classList.remove("oculto");
 
-                inicio.style.display = "none";
-
-                contenido.classList.remove("oculto");
-
-                window.scrollTo(0, 0);
-
-            }, 800);
-
-        });
-
-    }
+    window.scrollTo(0, 0);
+}
 
 
     /* =========================
