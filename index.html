@@ -1,102 +1,45 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Para Mochi 💗</title>
 
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
-
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 
 <body>
 
-    <!-- =====================================
-         ELEMENTOS OCULTOS PARA EL SCRIPT
-    ====================================== -->
-
-    <div
-        id="login"
-        style="display: none;"
-    >
-
-        <input
-            type="password"
-            id="password"
-        >
-
-        <button
-          type="button"
-          onclick="abrirPagina()"
-       >
-          Abrir 💗
-        </button>
-
-        <p id="error"></p>
-
-    </div>
-
-
-    <!-- =====================================
-         CORAZONES DE FONDO
-    ====================================== -->
-
+    <!-- CORAZONES -->
     <div class="hearts"></div>
 
 
-
-    <!-- =====================================
-         PANTALLA DE INICIO
-    ====================================== -->
-
-    <section
-        id="inicio"
-        class="inicio"
-    >
+    <!-- PANTALLA INICIAL -->
+    <section id="inicio" class="inicio">
 
         <div class="inicio-contenido">
 
-            <div class="corazon-grande">
-                ♡
-            </div>
+            <div class="corazon-grande">♡</div>
 
             <p class="pequeno">
                 Tengo algo para ti...
             </p>
 
-            <h1>
-                Mochi
-            </h1>
+            <h1>Mochi</h1>
 
             <p class="subtitulo">
                 Hay algo que quiero recordarte.
             </p>
 
-            <button
-                id="abrirBtn"
-                type="button"
-            >
+            <button id="abrirBtn" type="button">
                 Abrir 💗
             </button>
 
@@ -105,37 +48,23 @@
     </section>
 
 
-
-    <!-- =====================================
-         CONTENIDO PRINCIPAL
-    ====================================== -->
-
-    <main
-        id="contenido"
-        class="contenido oculto"
-    >
+    <!-- CONTENIDO -->
+    <main id="contenido" class="contenido oculto">
 
 
         <!-- HERO -->
-
         <section class="hero">
 
-            <div class="hero-corazon">
-                ♡
-            </div>
+            <div class="hero-corazon">♡</div>
 
             <p>
                 Para la persona que convirtió
                 mis días en algo más bonito
             </p>
 
-            <h2>
-                Mochi
-            </h2>
+            <h2>Mochi</h2>
 
-            <h3>
-                365 días contigo ❤️
-            </h3>
+            <h3>365 días contigo ❤️</h3>
 
             <p class="fecha">
                 23.08.2025 — 23.08.2026
@@ -148,11 +77,7 @@
         </section>
 
 
-
-        <!-- =================================
-             CONTADOR
-        ================================== -->
-
+        <!-- CONTADOR -->
         <section class="seccion contador-seccion">
 
             <p class="etiqueta">
@@ -170,58 +95,26 @@
                 cada vez más.
             </p>
 
-
             <div class="contador">
 
                 <div class="contador-item">
-
-                    <span id="dias">
-                        365
-                    </span>
-
-                    <small>
-                        DÍAS
-                    </small>
-
+                    <span id="dias">365</span>
+                    <small>DÍAS</small>
                 </div>
 
-
                 <div class="contador-item">
-
-                    <span id="horas">
-                        00
-                    </span>
-
-                    <small>
-                        HORAS
-                    </small>
-
+                    <span id="horas">00</span>
+                    <small>HORAS</small>
                 </div>
 
-
                 <div class="contador-item">
-
-                    <span id="minutos">
-                        00
-                    </span>
-
-                    <small>
-                        MINUTOS
-                    </small>
-
+                    <span id="minutos">00</span>
+                    <small>MINUTOS</small>
                 </div>
 
-
                 <div class="contador-item">
-
-                    <span id="segundos">
-                        00
-                    </span>
-
-                    <small>
-                        SEGUNDOS
-                    </small>
-
+                    <span id="segundos">00</span>
+                    <small>SEGUNDOS</small>
                 </div>
 
             </div>
@@ -229,11 +122,7 @@
         </section>
 
 
-
-        <!-- =================================
-             HISTORIA
-        ================================== -->
-
+        <!-- HISTORIA -->
         <section class="seccion historia">
 
             <p class="etiqueta">
@@ -244,17 +133,12 @@
                 Cómo empezó todo...
             </h2>
 
-
             <div class="recuerdos">
 
 
-                <!-- RECUERDO 1 -->
-
                 <article class="recuerdo">
 
-                    <div class="numero">
-                        01
-                    </div>
+                    <div class="numero">01</div>
 
                     <div class="recuerdo-texto">
 
@@ -288,14 +172,9 @@
                 </article>
 
 
-
-                <!-- RECUERDO 2 -->
-
                 <article class="recuerdo">
 
-                    <div class="numero">
-                        02
-                    </div>
+                    <div class="numero">02</div>
 
                     <div class="recuerdo-texto">
 
@@ -330,14 +209,9 @@
                 </article>
 
 
-
-                <!-- RECUERDO 3 -->
-
                 <article class="recuerdo">
 
-                    <div class="numero">
-                        03
-                    </div>
+                    <div class="numero">03</div>
 
                     <div class="recuerdo-texto">
 
@@ -377,14 +251,9 @@
                 </article>
 
 
-
-                <!-- RECUERDO 4 -->
-
                 <article class="recuerdo">
 
-                    <div class="numero">
-                        04
-                    </div>
+                    <div class="numero">04</div>
 
                     <div class="recuerdo-texto">
 
@@ -424,11 +293,7 @@
         </section>
 
 
-
-        <!-- =================================
-             GALERÍA
-        ================================== -->
-
+        <!-- GALERÍA -->
         <section class="seccion galeria-seccion">
 
             <p class="etiqueta">
@@ -443,49 +308,30 @@
                 Algunos de mis momentos favoritos contigo.
             </p>
 
-
             <div class="galeria">
 
                 <div class="foto">
-                    <img
-                        src="img/foto1.jpg"
-                        alt="Nuestro recuerdo"
-                    >
+                    <img src="img/foto1.jpg" alt="Nuestro recuerdo">
                 </div>
 
                 <div class="foto">
-                    <img
-                        src="img/foto2.jpg"
-                        alt="Nuestro recuerdo"
-                    >
+                    <img src="img/foto2.jpg" alt="Nuestro recuerdo">
                 </div>
 
                 <div class="foto">
-                    <img
-                        src="img/foto3.jpg"
-                        alt="Nuestro recuerdo"
-                    >
+                    <img src="img/foto3.jpg" alt="Nuestro recuerdo">
                 </div>
 
                 <div class="foto">
-                    <img
-                        src="img/foto4.jpg"
-                        alt="Nuestro recuerdo"
-                    >
+                    <img src="img/foto4.jpg" alt="Nuestro recuerdo">
                 </div>
 
                 <div class="foto">
-                    <img
-                        src="img/foto5.jpg"
-                        alt="Nuestro recuerdo"
-                    >
+                    <img src="img/foto5.jpg" alt="Nuestro recuerdo">
                 </div>
 
                 <div class="foto">
-                    <img
-                        src="img/foto6.jpg"
-                        alt="Nuestro recuerdo"
-                    >
+                    <img src="img/foto6.jpg" alt="Nuestro recuerdo">
                 </div>
 
             </div>
@@ -493,17 +339,12 @@
         </section>
 
 
-
-        <!-- =================================
-             CARTA
-        ================================== -->
-
+        <!-- CARTA -->
         <section class="seccion carta-seccion">
 
             <p class="etiqueta">
                 PARA TI
             </p>
-
 
             <div class="carta">
 
@@ -515,79 +356,60 @@
                     Para Mochi
                 </h2>
 
-
                 <p>
                     Mochi,
                 </p>
 
-
                 <p>
                     Hoy cumplimos 365 días juntos.
-                    Y quería hacerte algo que pudieras
-                    guardar, algo que cada vez que vieras
-                    te recordara un poquito de todo lo
-                    que hemos vivido.
+                    Y quería hacerte algo que pudieras guardar,
+                    algo que cada vez que vieras te recordara
+                    un poquito de todo lo que hemos vivido.
                 </p>
-
 
                 <p>
-                    A veces pienso en cómo empezó todo
-                    y me da risa. Íbamos camino a la fiesta
-                    de cumpleaños de un amigo y yo estaba
-                    con mis dibujos de los pipos y una rosa,
-                    tratando de juntar el valor suficiente
-                    para decirte lo que sentía.
+                    A veces pienso en cómo empezó todo y me da risa.
+                    Íbamos camino a la fiesta de cumpleaños de un amigo
+                    y yo estaba con mis dibujos de tus perritos y una rosa,
+                    tratando de juntar el valor suficiente para decirte
+                    lo que sentía.
                 </p>
-
 
                 <p>
                     Y terminé declarándome a ti.
-                    Sin saber que ese momento iba a
-                    convertirse en el comienzo de uno de
-                    los años más bonitos que he vivido.
+                    Sin saber que ese momento iba a convertirse
+                    en el comienzo de uno de los años más bonitos
+                    que he vivido.
                 </p>
-
 
                 <p>
                     También está aquel momento antes de todo,
-                    cuando escuchamos Afrodisíaco. Una canción
-                    que quizás en ese momento parecía una
-                    canción cualquiera, pero que ahora siempre
+                    cuando escuchamos Afrodisíaco.
+                    Una canción que quizás en ese momento parecía
+                    una canción cualquiera, pero que ahora siempre
                     me va a hacer pensar en nosotros.
                 </p>
-
 
                 <p>
                     Y después llegó Halloween.
                     Nuestro primer beso.
-                    Tuve que preguntarte porque te daba roche
-                    JAJAJA, y después de hacerlo decidiste
-                    no hablarme durante dos días del roche. 😭
+                    Tuve que preguntarte porque te daba roche JAJAJA,
+                    y después de hacerlo decidiste no hablarme durante
+                    dos días del roche. 😭
                 </p>
 
-
                 <p>
-                    Es gracioso recordarlo ahora, pero es uno
-                    de esos recuerdos que nunca quisiera olvidar.
-                </p>
-
-
-                <p>
-                    También recuerdo todos esos días jugando
-                    Roblox, nuestras llamadas y todas las
-                    tonterías que hacíamos.
+                    También recuerdo todos esos días jugando Roblox,
+                    nuestras llamadas y todas las tonterías que hacíamos.
                     Hasta ese juego de pingüinos con el parkour
                     que nos parecía lo máximo.
                 </p>
 
-
                 <p>
-                    Y creo que eso es lo que más me gusta
-                    de nosotros: que no necesitamos estar
-                    haciendo algo increíble para que un momento
-                    contigo se vuelva especial.
+                    Y creo que eso es lo que más me gusta de nosotros:
+                    que no necesitamos estar haciendo algo increíble
+                    para que un momento contigo se vuelva especial.
                 </p>
-
 
                 <p>
                     Puede ser una llamada, un juego, una canción,
@@ -596,14 +418,11 @@
                     que quiero guardar.
                 </p>
 
-
                 <p>
                     Gracias por este primer año, Mochi.
-                    Gracias por cada risa, cada llamada,
-                    cada abrazo, cada momento bonito y hasta
-                    por los momentos de roche. ❤️
+                    Gracias por cada risa, cada llamada, cada abrazo,
+                    cada momento bonito y hasta por los momentos de roche. ❤️
                 </p>
-
 
                 <p>
                     No sé exactamente qué nos espera después
@@ -611,18 +430,16 @@
                     quiero seguir haciendo recuerdos contigo.
                 </p>
 
-
                 <p>
                     Quiero que algún día podamos mirar atrás
-                    y decir: "¿Te acuerdas de cuando...?"
+                    y decir:
+                    "¿Te acuerdas de cuando...?"
                     y tener cientos de historias que contar.
                 </p>
-
 
                 <p class="final-carta">
                     Te amo muchísimo, Mochi. ❤️
                 </p>
-
 
                 <p class="firma">
                     Feliz primer año.
@@ -633,11 +450,7 @@
         </section>
 
 
-
-        <!-- =================================
-             FINAL
-        ================================== -->
-
+        <!-- FINAL -->
         <section class="final">
 
             <div class="final-corazon">
@@ -669,40 +482,18 @@
     </main>
 
 
-
-    <!-- =====================================
-         MÚSICA
-    ====================================== -->
-
-    <audio
-        id="musica"
-        loop
-    >
-
-        <source
-            src="musica.mp3"
-            type="audio/mpeg"
-        >
-
+    <!-- MÚSICA -->
+    <audio id="musica" loop>
+        <source src="musica.mp3" type="audio/mpeg">
     </audio>
 
-
-    <button
-        id="musicaBtn"
-        class="musica-btn"
-        type="button"
-    >
+    <button id="musicaBtn" class="musica-btn" type="button">
         ♫
     </button>
 
 
-
-    <!-- =====================================
-         JAVASCRIPT
-    ====================================== -->
-
     <script src="script.js"></script>
 
 </body>
-
 </html>
+```
