@@ -538,8 +538,314 @@
         ♫
     </button>
 
+<script>
 
-    <script src="script.js"></script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* =========================================
+       CONTADOR
+    ========================================= */
+
+    const fechaInicio = new Date(2025, 7, 23, 0, 0, 0);
+
+    function actualizarContador() {
+
+        const ahora = new Date();
+
+        const diferencia =
+            ahora.getTime() - fechaInicio.getTime();
+
+        if (diferencia < 0) return;
+
+        const segundo = 1000;
+        const minuto = segundo * 60;
+        const hora = minuto * 60;
+        const dia = hora * 24;
+
+        const dias =
+            Math.floor(diferencia / dia);
+
+        const horas =
+            Math.floor((diferencia % dia) / hora);
+
+        const minutos =
+            Math.floor((diferencia % hora) / minuto);
+
+        const segundos =
+            Math.floor((diferencia % minuto) / segundo);
+
+
+        const diasElemento =
+            document.getElementById("dias");
+
+        const horasElemento =
+            document.getElementById("horas");
+
+        const minutosElemento =
+            document.getElementById("minutos");
+
+        const segundosElemento =
+            document.getElementById("segundos");
+
+
+        if (diasElemento) {
+            diasElemento.innerText = dias;
+        }
+
+        if (horasElemento) {
+            horasElemento.innerText =
+                String(horas).padStart(2, "0");
+        }
+
+        if (minutosElemento) {
+            minutosElemento.innerText =
+                String(minutos).padStart(2, "0");
+        }
+
+        if (segundosElemento) {
+            segundosElemento.innerText =
+                String(segundos).padStart(2, "0");
+        }
+
+    }
+
+
+    actualizarContador();
+
+    setInterval(actualizarContador, 1000);
+
+
+
+    /* =========================================
+       MÚSICA
+    ========================================= */
+
+    const musica =
+        document.getElementById("musica");
+
+    const musicaBtn =
+        document.getElementById("musicaBtn");
+
+
+    let musicaIntentada = false;
+
+
+    function iniciarMusica() {
+
+        if (!musica) {
+            console.log("NO SE ENCONTRÓ EL AUDIO");
+            return;
+        }
+
+        if (!musica.paused) {
+            return;
+        }
+
+        musica.volume = 0.7;
+
+        musica.play()
+            .then(function () {
+
+                console.log("Música funcionando ❤️");
+
+                if (musicaBtn) {
+                    musicaBtn.innerText = "♫";
+                }
+
+            })
+            .catch(function (error) {
+
+                console.log(
+                    "El navegador bloqueó la música:",
+                    error
+                );
+
+            });
+
+    }
+
+
+    /* PRIMER TOQUE EN CELULAR */
+
+    document.addEventListener(
+        "touchstart",
+        function () {
+
+            if (!musicaIntentada) {
+
+                musicaIntentada = true;
+
+                iniciarMusica();
+
+            }
+
+        },
+        { once: true }
+    );
+
+
+    /* PRIMER CLICK EN PC */
+
+    document.addEventListener(
+        "click",
+        function () {
+
+            if (!musicaIntentada) {
+
+                musicaIntentada = true;
+
+                iniciarMusica();
+
+            }
+
+        },
+        { once: true }
+    );
+
+
+    /* BOTÓN DE MÚSICA */
+
+    if (musicaBtn) {
+
+        musicaBtn.addEventListener(
+            "click",
+            function (event) {
+
+                event.stopPropagation();
+
+                if (musica.paused) {
+
+                    musica.play()
+                        .then(function () {
+
+                            musicaBtn.innerText = "♫";
+
+                        })
+                        .catch(function (error) {
+
+                            console.log(error);
+
+                        });
+
+                } else {
+
+                    musica.pause();
+
+                    musicaBtn.innerText = "🔇";
+
+                }
+
+            }
+        );
+
+    }
+
+
+
+    /* =========================================
+       CORAZONES
+    ========================================= */
+
+    const hearts =
+        document.querySelector(".hearts");
+
+
+    function crearCorazon() {
+
+        if (!hearts) return;
+
+        const heart =
+            document.createElement("div");
+
+        heart.className = "heart";
+
+        const simbolos =
+            ["♡", "♥", "✦"];
+
+        heart.innerText =
+            simbolos[
+                Math.floor(
+                    Math.random() * simbolos.length
+                )
+            ];
+
+        heart.style.left =
+            Math.random() * 100 + "%";
+
+        heart.style.fontSize =
+            (10 + Math.random() * 18) + "px";
+
+        heart.style.animationDuration =
+            (6 + Math.random() * 5) + "s";
+
+        hearts.appendChild(heart);
+
+        setTimeout(function () {
+
+            heart.remove();
+
+        }, 12000);
+
+    }
+
+
+    setInterval(crearCorazon, 700);
+
+
+
+    /* =========================================
+       ANIMACIONES
+    ========================================= */
+
+    const elementos =
+        document.querySelectorAll(
+            ".recuerdo, .foto, .carta"
+        );
+
+
+    if ("IntersectionObserver" in window) {
+
+        const observer =
+            new IntersectionObserver(
+                function (entries) {
+
+                    entries.forEach(
+                        function (entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target.classList.add(
+                                    "visible"
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.1
+                }
+            );
+
+
+        elementos.forEach(
+            function (elemento) {
+
+                observer.observe(elemento);
+
+            }
+        );
+
+    }
+
+});
+
+</script>
+ 
 
 </body>
 
