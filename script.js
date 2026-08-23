@@ -1,56 +1,98 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
-    // =========================
-    // BOTÓN ABRIR
-    // =========================
+    /* =========================
+       CONTRASEÑA
+    ========================= */
+
+    const passwordCorrecta = "23082025";
+
+    const boton = document.getElementById("entrarBtn");
+    const input = document.getElementById("password");
+    const error = document.getElementById("error");
+    const login = document.getElementById("login");
+
+    boton.addEventListener("click", function () {
+
+        const clave = input.value.trim();
+
+        if (clave === passwordCorrecta) {
+
+            error.textContent = "Sabía que eras tú. ♡";
+
+            setTimeout(function () {
+                login.style.display = "none";
+            }, 1000);
+
+        } else {
+
+            error.textContent =
+                "Mmm... esa no es, Mochi 😭❤️";
+
+            input.value = "";
+            input.focus();
+        }
+
+    });
+
+
+    /* =========================
+       BOTÓN ABRIR
+    ========================= */
 
     const abrirBtn = document.getElementById("abrirBtn");
     const inicio = document.getElementById("inicio");
     const contenido = document.getElementById("contenido");
 
     if (abrirBtn) {
-        abrirBtn.addEventListener("click", () => {
+
+        abrirBtn.addEventListener("click", function () {
 
             inicio.classList.add("ocultando");
 
-            setTimeout(() => {
+            setTimeout(function () {
+
                 inicio.style.display = "none";
+
                 contenido.classList.remove("oculto");
 
-                window.scrollTo({
-                    top: 0,
-                    behavior: "instant"
-                });
+                window.scrollTo(0, 0);
+
             }, 800);
 
         });
+
     }
 
 
-    // =========================
-    // MÚSICA
-    // =========================
+    /* =========================
+       MÚSICA
+    ========================= */
 
     const musica = document.getElementById("musica");
     const musicaBtn = document.getElementById("musicaBtn");
 
     if (musica && musicaBtn) {
 
-        musicaBtn.addEventListener("click", () => {
+        musicaBtn.addEventListener("click", function () {
 
             if (musica.paused) {
 
                 musica.play()
-                    .then(() => {
+                    .then(function () {
+
                         musicaBtn.innerHTML = "♫";
+
                     })
-                    .catch(() => {
+                    .catch(function () {
+
                         musicaBtn.innerHTML = "🔇";
+
                     });
 
             } else {
 
                 musica.pause();
+
                 musicaBtn.innerHTML = "🔇";
 
             }
@@ -60,16 +102,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // =========================
-    // CONTADOR
-    // =========================
+    /* =========================
+       CONTADOR
+    ========================= */
 
-    const fechaInicio = new Date("2025-08-23T00:00:00");
+    const fechaInicio =
+        new Date("2025-08-23T00:00:00");
 
     function actualizarContador() {
 
         const ahora = new Date();
-        const diferencia = ahora - fechaInicio;
+
+        const diferencia =
+            ahora - fechaInicio;
 
         const dias = Math.floor(
             diferencia / (1000 * 60 * 60 * 24)
@@ -87,10 +132,18 @@ document.addEventListener("DOMContentLoaded", () => {
             (diferencia / 1000) % 60
         );
 
-        const diasElemento = document.getElementById("dias");
-        const horasElemento = document.getElementById("horas");
-        const minutosElemento = document.getElementById("minutos");
-        const segundosElemento = document.getElementById("segundos");
+        const diasElemento =
+            document.getElementById("dias");
+
+        const horasElemento =
+            document.getElementById("horas");
+
+        const minutosElemento =
+            document.getElementById("minutos");
+
+        const segundosElemento =
+            document.getElementById("segundos");
+
 
         if (diasElemento) {
             diasElemento.textContent = dias;
@@ -118,95 +171,53 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(actualizarContador, 1000);
 
 
-    // =========================
-    // CORAZONES
-    // =========================
+    /* =========================
+       CORAZONES
+    ========================= */
 
     const heartsContainer =
         document.querySelector(".hearts");
 
-    function crearCorazon() {
+    if (heartsContainer) {
 
-        if (!heartsContainer) {
-            return;
+        function crearCorazon() {
+
+            const heart =
+                document.createElement("div");
+
+            heart.classList.add("heart");
+
+            const simbolos =
+                ["♡", "♥", "✦", "♡"];
+
+            heart.innerHTML =
+                simbolos[
+                    Math.floor(
+                        Math.random() *
+                        simbolos.length
+                    )
+                ];
+
+            heart.style.left =
+                Math.random() * 100 + "%";
+
+            heart.style.fontSize =
+                (Math.random() * 18 + 10) + "px";
+
+            heart.style.animationDuration =
+                (Math.random() * 5 + 6) + "s";
+
+            heartsContainer.appendChild(heart);
+
+            setTimeout(function () {
+                heart.remove();
+            }, 12000);
+
         }
 
-        const heart = document.createElement("div");
-
-        heart.classList.add("heart");
-
-        const simbolos = ["♡", "♥", "✦", "♡"];
-
-        heart.innerHTML =
-            simbolos[
-                Math.floor(
-                    Math.random() * simbolos.length
-                )
-            ];
-
-        heart.style.left =
-            Math.random() * 100 + "%";
-
-        heart.style.fontSize =
-            (Math.random() * 18 + 10) + "px";
-
-        heart.style.animationDuration =
-            (Math.random() * 5 + 6) + "s";
-
-        heartsContainer.appendChild(heart);
-
-        setTimeout(() => {
-            heart.remove();
-        }, 12000);
+        setInterval(crearCorazon, 700);
 
     }
 
-    setInterval(crearCorazon, 700);
-
-
-    // =========================
-    // ANIMACIONES AL SCROLL
-    // =========================
-
-    const elementos = document.querySelectorAll(
-        ".recuerdo, .foto, .carta"
-    );
-
-    const observer = new IntersectionObserver(
-        (entradas) => {
-
-            entradas.forEach((entrada) => {
-
-                if (entrada.isIntersecting) {
-
-                    entrada.target.style.opacity = "1";
-
-                    entrada.target.style.transform =
-                        "translateY(0)";
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.15
-        }
-    );
-
-
-    elementos.forEach((elemento) => {
-
-        elemento.style.opacity = "0";
-
-        elemento.style.transform =
-            "translateY(30px)";
-
-        elemento.style.transition =
-            "opacity 0.8s ease, transform 0.8s ease";
-
-        observer.observe(elemento);
-
-    });
 
 });
