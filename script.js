@@ -7,16 +7,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const error = document.getElementById("error");
     const login = document.getElementById("login");
 
-    console.log("SCRIPT CARGADO");
-
     boton.addEventListener("click", function () {
 
-        console.log("BOTON PRESIONADO");
+        const clave = input.value.trim();
 
-        if (input.value === passwordCorrecta) {
+        if (clave === passwordCorrecta) {
 
             error.textContent = "Sabía que eras tú. ♡";
-            error.style.color = "green";
 
             setTimeout(function () {
                 login.style.display = "none";
@@ -24,8 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         } else {
 
-            error.textContent = "Contraseña incorrecta 😭";
-            error.style.color = "red";
+            error.textContent = "Mmm... esa no es, Mochi 😭❤️";
+
+            input.value = "";
 
         }
 
