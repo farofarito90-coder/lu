@@ -1,3 +1,189 @@
+/* =========================
+   PANTALLA DE CONTRASEÑA
+========================= */
+
+#login {
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            #ffe1eb,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            #ffd7e4,
+            transparent 35%
+        ),
+        #fff7fa;
+
+    transition: opacity 0.8s ease,
+                transform 0.8s ease;
+}
+
+#login.saliendo {
+    opacity: 0;
+
+    transform: scale(1.08);
+
+    pointer-events: none;
+}
+
+.login-card {
+
+    width: 100%;
+    max-width: 450px;
+
+    padding: 55px 35px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,0.82);
+
+    border: 1px solid #f2ccd8;
+
+    border-radius: 35px;
+
+    box-shadow:
+        0 25px 70px rgba(190,90,120,0.12);
+
+    backdrop-filter: blur(10px);
+}
+
+.login-heart {
+
+    font-size: 70px;
+
+    color: #e88ba8;
+
+    animation: latido 1.8s infinite;
+}
+
+.login-small {
+
+    margin-top: 10px;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #bd7c91;
+}
+
+.login-card h1 {
+
+    margin: 5px 0;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: 85px;
+
+    font-weight: 400;
+
+    color: #d96f92;
+}
+
+.login-text {
+
+    color: #8f6875;
+
+    margin-bottom: 25px;
+}
+
+.password-box {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.password-box input {
+
+    width: 100%;
+
+    padding: 15px 20px;
+
+    border-radius: 50px;
+
+    border: 1px solid #efc7d4;
+
+    outline: none;
+
+    background: #fffafa;
+
+    text-align: center;
+
+    font-family: inherit;
+
+    color: #704452;
+
+    transition: 0.3s;
+}
+
+.password-box input:focus {
+
+    border-color: #e88ba8;
+
+    box-shadow:
+        0 0 0 4px rgba(232,139,168,0.12);
+}
+
+.password-box button {
+
+    padding: 14px;
+
+    border-radius: 50px;
+
+    background: #e88ba8;
+
+    color: white;
+
+    font-size: 15px;
+
+    box-shadow:
+        0 8px 25px rgba(216,108,144,0.2);
+
+    transition: 0.3s;
+}
+
+.password-box button:hover {
+
+    transform: translateY(-3px);
+
+}
+
+#error {
+
+    min-height: 25px;
+
+    margin-top: 15px;
+
+    color: #d96f92;
+
+    font-size: 13px;
+}
+
+.pista {
+
+    margin-top: 10px;
+
+    font-size: 11px;
+
+    color: #bd92a0;
+}
 * {
     margin: 0;
     padding: 0;
