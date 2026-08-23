@@ -1,30 +1,8 @@
-```javascript
 document.addEventListener("DOMContentLoaded", function () {
 
-    // =========================
-    // BOTÓN ABRIR
-    // =========================
-
-    const abrirBtn = document.getElementById("abrirBtn");
-    const inicio = document.getElementById("inicio");
-    const contenido = document.getElementById("contenido");
-
-    abrirBtn.addEventListener("click", function () {
-
-        inicio.style.display = "none";
-        contenido.classList.remove("oculto");
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-    });
-
-
-    // =========================
-    // MÚSICA
-    // =========================
+    /* =========================
+       MÚSICA
+    ========================= */
 
     const musica = document.getElementById("musica");
     const musicaBtn = document.getElementById("musicaBtn");
@@ -33,17 +11,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (musica.paused) {
 
-            musica.play()
-                .then(function () {
-                    musicaBtn.textContent = "♫";
-                })
-                .catch(function () {
-                    alert("No se encontró la música. Revisa que el archivo se llame musica.mp3");
-                });
+            musica.play();
+
+            musicaBtn.textContent = "♫";
 
         } else {
 
             musica.pause();
+
             musicaBtn.textContent = "🔇";
 
         }
@@ -51,9 +26,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    // =========================
-    // CONTADOR
-    // =========================
+    /* =========================
+       CONTADOR
+    ========================= */
 
     const fechaInicio = new Date("2025-08-23T00:00:00");
 
@@ -96,11 +71,12 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(actualizarContador, 1000);
 
 
-    // =========================
-    // CORAZONES
-    // =========================
+    /* =========================
+       CORAZONES
+    ========================= */
 
-    const heartsContainer = document.querySelector(".hearts");
+    const heartsContainer =
+        document.querySelector(".hearts");
 
     function crearCorazon() {
 
@@ -131,5 +107,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setInterval(crearCorazon, 700);
 
+
+    /* =========================
+       ANIMACIONES
+    ========================= */
+
+    const elementos =
+        document.querySelectorAll(
+            ".recuerdo, .foto, .carta"
+        );
+
+    const observer =
+        new IntersectionObserver(function (entradas) {
+
+            entradas.forEach(function (entrada) {
+
+                if (entrada.isIntersecting) {
+
+                    entrada.target.classList.add("visible");
+
+                }
+
+            });
+
+        }, {
+            threshold: 0.15
+        });
+
+
+    elementos.forEach(function (elemento) {
+
+        observer.observe(elemento);
+
+    });
+
 });
-```
